@@ -950,11 +950,11 @@ button.close {
 /*-- //Tabs-Styling --*/
 /*--menu--*/
 
-#menu {
+/* #menu {
     background: #fff url(../images/menu.jpg)no-repeat -61px 262px;
     padding: 5em 0;
 	
-}
+} */
 .menu-tag {
     position: absolute;
     top: 0%;
