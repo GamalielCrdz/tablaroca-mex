@@ -18,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
     />
     <script type="application/x-javascript">
-      addEventListener("load", function() {
+       addEventListener("load", function() {
           setTimeout(hideURLbar, 0);
       }, false);
 
@@ -72,17 +72,17 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
 
   <body>
     <!-- BANNER -->
-    <div class="header-bottom">
+    <div id="navbar-container" class="header-bottom">
       <nav class="navbar navbar-default">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <div class="logo">
+          <div id="logo" class="logo">
             <a class="navbar-brand" href="index.html">
               <img
-                class="img-responsive text-center"
+                class="text-center"
                 src="images/logotablaroca.jpg"
                 alt=""
-                height="200"
+                height="78"
                 width="200"
               />
             </a>
@@ -100,14 +100,22 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
           </button>
 
           <!-- <img class="" src="images/logotablaroca.jpg "> -->
-        </div>
+				</div>
+				<div id="contact-number" style="display: none; text-align: center;" >
+						<div>
+							LLAMANOS PARA CUALQUIER COTIZACION
+						</div>
+						<div>
+								81 2263 1726
+						</div>
+					</div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div
           class="collapse navbar-collapse nav-wil"
           id="bs-example-navbar-collapse-1"
         >
           <nav>
-            <ul class="nav navbar-nav">
+            <ul id="contact-links" class="nav navbar-nav">
               <li>
                 <a href="#about" class="scroll hvr-bounce-to-bottom"
                   >¿Por qué elegirnos?</a
@@ -126,13 +134,15 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
                   >Contacto</a
                 >
               </li>
-            </ul>
+						</ul>
           </nav>
         </div>
         <!-- /.navbar-collapse -->
       </nav>
     </div>
+		<div style="height:78px;" >
 
+		</div>
     <!-- BANNER -->
 
     <div class="banner-silder">
@@ -661,6 +671,7 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
     ></a>
     <!-- js -->
 
+    <script src="js/navbar.js"></script>
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="js/carousel.js"></script>
     <!-- start-smoth-scrolling -->
@@ -801,7 +812,7 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
     <script src="js/SmoothScroll.min.js"></script>
     <script type="text/javascript">
       /* init Jarallax */
-      $(".jarallax").jarallax({
+    $(".jarallax").jarallax({
         speed: 0.5,
         imgWidth: 1366,
         imgHeight: 768
