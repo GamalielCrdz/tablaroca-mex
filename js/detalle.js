@@ -1,11 +1,18 @@
 window.onload = async function() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const index = urlParams.get("d");
+  const indexPage = urlParams.get("d");
   const galeria = document.getElementById("galeria");
   let type = "AISLANTE";
+  let currentModalIndex = 0;
+  document.getElementById("modal-next").addEventListener("click", () => {
+    transitionModal("next");
+  });
+  document.getElementById("modal-back").addEventListener("click", () => {
+    transitionModal("back");
+  });
 
-  switch (index) {
+  switch (indexPage) {
     case "1":
       type = "CAJILLO";
       break;
@@ -114,13 +121,13 @@ window.onload = async function() {
     ["1_aislante", "2_aislante", "3_aislante", "4_aislante"]
   ];
 
-  for (const filename of images[index - 1]) {
+  for (let index = 0; index < images[indexPage - 1].length; index++) {
+    const filename = images[indexPage - 1][index];
     const div = document.createElement("div");
     div.classList.add("img-galeria");
-
     div.setAttribute("data-toggle", "modal");
     div.setAttribute("data-target", "#exampleModalCenter");
-    div.setAttribute("data-whatever", `${filename}`);
+    div.setAttribute("data-whatever", `${index}`);
     const img = document.createElement("img");
     img.src = `../images/FOTOS_SECCION_GALERIA/${type}/${filename}.jpg`;
     div.append(img);
@@ -129,13 +136,33 @@ window.onload = async function() {
 
   $("#exampleModalCenter").on("show.bs.modal", function(event) {
     const button = $(event.relatedTarget); // Button that triggered the modal
-    const recipient = button.data("whatever"); // Extract info from data-* attributes
-    const modal = $(this);
+    const index = button.data("whatever"); // Extract info from data-* attributes
+    const filename = images[indexPage - 1][index];
+    currentModalIndex = index;
     document
       .getElementById("img-modal")
       .setAttribute(
         "src",
-        `../images/FOTOS_SECCION_GALERIA/${type}/${recipient}.jpg`
+        `../images/FOTOS_SECCION_GALERIA/${type}/${filename}.jpg`
       );
   });
+
+  function transitionModal(action) {
+    if (
+      action === "next" &&
+      currentModalIndex < images[indexPage - 1].length - 1
+    ) {
+      currentModalIndex++;
+    } else if (action === "back" && currentModalIndex > 0) {
+      currentModalIndex--;
+    }
+    const filename = images[indexPage - 1][currentModalIndex];
+
+    document
+      .getElementById("img-modal")
+      .setAttribute(
+        "src",
+        `../images/FOTOS_SECCION_GALERIA/${type}/${filename}.jpg`
+      );
+  }
 };
