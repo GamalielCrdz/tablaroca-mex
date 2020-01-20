@@ -11,7 +11,7 @@
   margin-top: 30px;
 }
 .img-galeria {
-  width: 310px;
+  width: 282px;
   height: 265px;
   margin-bottom: 10px;
 }
@@ -19,15 +19,23 @@
   cursor: pointer;
 }
 .img-galeria img {
-  width: 310px;
+  width: 282px;
   height: 240px;
 }
-.img-galeria .img-title {
-  width: 310px;
-  height: 25px;
-  background-color: #f63838;
-  color: #ffffff;
+.modal-content {
   text-align: center;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+.modal-content .modal-header {
+  background-color: transparent;
+  border: none;
+}
+.modal-content .modal-header .close {
+  color: #f63838;
+  text-shadow: none;
+  margin-top: -30px;
 }
 @media only screen and (max-width: 666px) {
   .galeria-container {

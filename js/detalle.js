@@ -7,31 +7,31 @@ window.onload = async function() {
 
   switch (index) {
     case "1":
-      type = "AISLANTE";
-      break;
-    case "2":
-      type = "CABECERAS";
-      break;
-    case "3":
       type = "CAJILLO";
       break;
-    case "4":
+    case "2":
       type = "DECORATIVOS";
       break;
-    case "5":
-      type = "ISLAS";
-      break;
-    case "6":
+    case "3":
       type = "MUEBLES";
       break;
-    case "7":
+    case "4":
       type = "MUROS";
+      break;
+    case "5":
+      type = "CABECERAS";
+      break;
+    case "6":
+      type = "TABLAROCA";
+      break;
+    case "7":
+      type = "ISLAS";
       break;
     case "8":
       type = "PLAFON";
       break;
     case "9":
-      type = "TABLAROCA";
+      type = "AISLANTE";
       break;
     default:
       type = "AISLANTE";
@@ -40,23 +40,102 @@ window.onload = async function() {
   console.log(type);
 
   const images = [
-    ["1_aislante", "2_aislante", "3_aislante", "4_aislante"],
-    [""],
-    [""],
-    [""],
-    [""],
-    [""],
-    [""],
-    [""],
-    [""]
+    [
+      "1_CAJILLO",
+      "2_CAJILLO",
+      "3_CAJILLO",
+      "4_CAJILLO",
+      "5_CAJILLO",
+      "6_CAJILLO",
+      "7_CAJILLO",
+      "8_CAJILLO"
+    ],
+    [
+      "1_DECORATIVO",
+      "2_DECORATIVO",
+      "3_DECORATIVO",
+      "4_DECORATIVO",
+      "5_DECORATIVO",
+      "6_DECORATIVO",
+      "7_DECORATIVO",
+      "8_DECORATIVO"
+    ],
+    [
+      "1_MUEBLE_TV",
+      "2_MUEBLE_TV",
+      "3_MUEBLE_TV",
+      "4_MUEBLE_TV",
+      "5_MUEBLE_TV",
+      "6_MUEBLE_TV",
+      "7_MUEBLE_TV",
+      "8_MUEBLE_TV"
+    ],
+    [
+      "1_MURO_DECORATIVO",
+      "2_MURO_DECORATIVO",
+      "3_MURO_DECORATIVO",
+      "4_MURO_DECORATIVO",
+      "5_MURO_DECORATIVO",
+      "6_MURO_DECORATIVO",
+      "7_MURO_DECORATIVO",
+      "8_MURO_DECORATIVO"
+    ],
+    [
+      "1_CABECERA",
+      "2_CABECERA",
+      "3_CABECERA",
+      "4_CABECERA",
+      "5_CABECERA",
+      "6_CABECERA",
+      "7_CABECERA",
+      "8_CABECERA"
+    ],
+    ["1_exterior", "2_exterior", "3_exterior", "4_exterior"],
+    [
+      "1_BARRA",
+      "2_BARRA",
+      "3_BARRA",
+      "4_BARRA",
+      "5_BARRA",
+      "6_BARRA",
+      "7_BARRA",
+      "8_BARRA"
+    ],
+    [
+      "1_REGISTRABLE",
+      "2_REGISTRABLE",
+      "3_REGISTRABLE",
+      "4_REGISTRABLE",
+      "5_REGISTRABLE",
+      "6_REGISTRABLE",
+      "7_REGISTRABLE",
+      "8_REGISTRABLE"
+    ],
+    ["1_aislante", "2_aislante", "3_aislante", "4_aislante"]
   ];
 
   for (const filename of images[index - 1]) {
     const div = document.createElement("div");
     div.classList.add("img-galeria");
+
+    div.setAttribute("data-toggle", "modal");
+    div.setAttribute("data-target", "#exampleModalCenter");
+    div.setAttribute("data-whatever", `${filename}`);
     const img = document.createElement("img");
     img.src = `../images/FOTOS_SECCION_GALERIA/${type}/${filename}.jpg`;
     div.append(img);
     galeria.append(div);
   }
+
+  $("#exampleModalCenter").on("show.bs.modal", function(event) {
+    const button = $(event.relatedTarget); // Button that triggered the modal
+    const recipient = button.data("whatever"); // Extract info from data-* attributes
+    const modal = $(this);
+    document
+      .getElementById("img-modal")
+      .setAttribute(
+        "src",
+        `../images/FOTOS_SECCION_GALERIA/${type}/${recipient}.jpg`
+      );
+  });
 };
