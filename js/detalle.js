@@ -1,9 +1,85 @@
+const images = [
+  [
+    "1_CAJILLO",
+    "2_CAJILLO",
+    "3_CAJILLO",
+    "4_CAJILLO",
+    "5_CAJILLO",
+    "6_CAJILLO",
+    "7_CAJILLO",
+    "8_CAJILLO"
+  ],
+  [
+    "1_DECORATIVO",
+    "2_DECORATIVO",
+    "3_DECORATIVO",
+    "4_DECORATIVO",
+    "5_DECORATIVO",
+    "6_DECORATIVO",
+    "7_DECORATIVO",
+    "8_DECORATIVO"
+  ],
+  [
+    "1_MUEBLE_TV",
+    "2_MUEBLE_TV",
+    "3_MUEBLE_TV",
+    "4_MUEBLE_TV",
+    "5_MUEBLE_TV",
+    "6_MUEBLE_TV",
+    "7_MUEBLE_TV",
+    "8_MUEBLE_TV"
+  ],
+  [
+    "1_MURO_DECORATIVO",
+    "2_MURO_DECORATIVO",
+    "3_MURO_DECORATIVO",
+    "4_MURO_DECORATIVO",
+    "5_MURO_DECORATIVO",
+    "6_MURO_DECORATIVO",
+    "7_MURO_DECORATIVO",
+    "8_MURO_DECORATIVO"
+  ],
+  [
+    "1_CABECERA",
+    "2_CABECERA",
+    "3_CABECERA",
+    "4_CABECERA",
+    "5_CABECERA",
+    "6_CABECERA",
+    "7_CABECERA",
+    "8_CABECERA"
+  ],
+  ["1_exterior", "2_exterior", "3_exterior", "4_exterior"],
+  [
+    "1_BARRA",
+    "2_BARRA",
+    "3_BARRA",
+    "4_BARRA",
+    "5_BARRA",
+    "6_BARRA",
+    "7_BARRA",
+    "8_BARRA"
+  ],
+  [
+    "1_REGISTRABLE",
+    "2_REGISTRABLE",
+    "3_REGISTRABLE",
+    "4_REGISTRABLE",
+    "5_REGISTRABLE",
+    "6_REGISTRABLE",
+    "7_REGISTRABLE",
+    "8_REGISTRABLE"
+  ],
+  ["1_aislante", "2_aislante", "3_aislante", "4_aislante"]
+];
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const indexPage = urlParams.get("d");
+let type = "AISLANTE";
+var slideIndex = 1;
+
 window.onload = async function() {
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const indexPage = urlParams.get("d");
   const galeria = document.getElementById("galeria");
-  let type = "AISLANTE";
   let currentModalIndex = 0;
   document.getElementById("modal-next").addEventListener("click", () => {
     transitionModal("next");
@@ -44,82 +120,6 @@ window.onload = async function() {
       type = "AISLANTE";
       break;
   }
-  console.log(type);
-
-  const images = [
-    [
-      "1_CAJILLO",
-      "2_CAJILLO",
-      "3_CAJILLO",
-      "4_CAJILLO",
-      "5_CAJILLO",
-      "6_CAJILLO",
-      "7_CAJILLO",
-      "8_CAJILLO"
-    ],
-    [
-      "1_DECORATIVO",
-      "2_DECORATIVO",
-      "3_DECORATIVO",
-      "4_DECORATIVO",
-      "5_DECORATIVO",
-      "6_DECORATIVO",
-      "7_DECORATIVO",
-      "8_DECORATIVO"
-    ],
-    [
-      "1_MUEBLE_TV",
-      "2_MUEBLE_TV",
-      "3_MUEBLE_TV",
-      "4_MUEBLE_TV",
-      "5_MUEBLE_TV",
-      "6_MUEBLE_TV",
-      "7_MUEBLE_TV",
-      "8_MUEBLE_TV"
-    ],
-    [
-      "1_MURO_DECORATIVO",
-      "2_MURO_DECORATIVO",
-      "3_MURO_DECORATIVO",
-      "4_MURO_DECORATIVO",
-      "5_MURO_DECORATIVO",
-      "6_MURO_DECORATIVO",
-      "7_MURO_DECORATIVO",
-      "8_MURO_DECORATIVO"
-    ],
-    [
-      "1_CABECERA",
-      "2_CABECERA",
-      "3_CABECERA",
-      "4_CABECERA",
-      "5_CABECERA",
-      "6_CABECERA",
-      "7_CABECERA",
-      "8_CABECERA"
-    ],
-    ["1_exterior", "2_exterior", "3_exterior", "4_exterior"],
-    [
-      "1_BARRA",
-      "2_BARRA",
-      "3_BARRA",
-      "4_BARRA",
-      "5_BARRA",
-      "6_BARRA",
-      "7_BARRA",
-      "8_BARRA"
-    ],
-    [
-      "1_REGISTRABLE",
-      "2_REGISTRABLE",
-      "3_REGISTRABLE",
-      "4_REGISTRABLE",
-      "5_REGISTRABLE",
-      "6_REGISTRABLE",
-      "7_REGISTRABLE",
-      "8_REGISTRABLE"
-    ],
-    ["1_aislante", "2_aislante", "3_aislante", "4_aislante"]
-  ];
 
   for (let index = 0; index < images[indexPage - 1].length; index++) {
     const filename = images[indexPage - 1][index];
@@ -165,4 +165,62 @@ window.onload = async function() {
         `../images/FOTOS_SECCION_GALERIA/${type}/${filename}.jpg`
       );
   }
+
+  loadCarousel();
+  showSlides(slideIndex);
 };
+
+function loadCarousel() {
+  const chunkedImages = chunk(images[indexPage-1], 6);
+  const carousel = document.getElementById('carousel-inner');
+  console.log(chunkedImages);
+  
+  for (const [index, carouselItem] of chunkedImages.entries()) {
+    const carouselItemElement = document.createElement('div');
+    carouselItemElement.className = `mySlides myfade`;
+    for (const image of carouselItem) {
+      const imageElement = document.createElement('img');
+      imageElement.className = 'carousel-image';
+      imageElement.src = `../images/FOTOS_SECCION_GALERIA/${type}/${image}.jpg`;
+      carouselItemElement.append(imageElement);
+    }
+    carousel.prepend(carouselItemElement);
+  }
+}
+
+
+function chunk(array, size) {
+  const chunked_arr = [];
+  let copied = [...array]; // ES6 destructuring
+  const numOfChild = Math.ceil(copied.length / size); // Round up to the nearest integer
+  for (let i = 0; i < numOfChild; i++) {
+    chunked_arr.push(copied.splice(0, size));
+  }
+  return chunked_arr;
+}
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  // var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  // for (i = 0; i < dots.length; i++) {
+  //     dots[i].className = dots[i].className.replace(" active", "");
+  // }
+  slides[slideIndex-1].style = "display: flex; justify-content: center";
+  // dots[slideIndex-1].className += " active";
+}
