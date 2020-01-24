@@ -312,10 +312,35 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	background-color: #111;
 	color: white!important;
 }
-.nav-colored ul li .scroll {
-	color: white!important;
+.navbar-top {
+	height: 25px;
+	background-color: #111111;
+	color: #ffffff;
+	font-size: 13px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 64px;
 }
-
+.navbar-top .header-contact {
+	display: none;
+}
+.nav-colored .navbar-collapse.collapse {
+	display: none!important;
+}
+.nav-colored .navbar-header {
+	display: none;
+}
+.nav-colored .navbar-top .header-contact {
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin-top: 15px;
+}
+.navbar-top a {
+	color: white;
+}
 .navbar-default .navbar-nav > li > a {
 		color: #111;
 		margin-top: 0px;

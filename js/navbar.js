@@ -1,7 +1,7 @@
 const navbar = document.getElementById("navbar-container");
 const collapse = document.getElementById("bs-example-navbar-collapse-1");
 const links = document.getElementById("contact-links");
-const numberContact = document.getElementById("contact-number");
+const navbarTop = document.getElementById("contact-number");
 const logo = document.getElementById("logo");
 
 window.onscroll =  function(e) {
@@ -9,15 +9,15 @@ window.onscroll =  function(e) {
 
   if (scroll >= 150) {
     navbar.classList.add('nav-colored');
-    links.style = 'display: none;'
+/*     links.style = 'display: none;'
     collapse.style = 'display: none!important;';
     logo.style = 'display: none;'
-    numberContact.style = 'text-align: center; margin-top: 15px;'
+    navbarTop.style = 'text-align: center; margin-top: 15px;' */
   } else {
-    logo.style = '';
-    numberContact.style = 'display: none;'
+/*     logo.style = '';
+    navbarTop.classList.remove('navbar-top-scroll');
     links.style = '';
-    collapse.style = '';
+    collapse.style = ''; */
     navbar.classList.remove('nav-colored');
   }
 };
