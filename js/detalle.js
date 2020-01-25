@@ -166,7 +166,7 @@ window.onload = async function() {
       );
   }
 
-  loadCarousel();
+/*   loadCarousel(); */
   showSlides(slideIndex);
 };
 
@@ -221,6 +221,6 @@ function showSlides(n) {
   // for (i = 0; i < dots.length; i++) {
   //     dots[i].className = dots[i].className.replace(" active", "");
   // }
-  slides[slideIndex-1].style = "display: flex; justify-content: center";
+  slides[slideIndex-1].style = "display: flex; justify-content: space-around";
   // dots[slideIndex-1].className += " active";
 }

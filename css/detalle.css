@@ -143,7 +143,22 @@
   animation-name: myfade;
   animation-duration: 1.5s;
 }
-
+.img-galeria-slide {
+  width: 170px;
+  height: 210px;
+}
+.img-galeria-slide img{
+  width: 170px;
+  height: 200px;
+}
+.img-galeria-slide .img-title {
+  background-color: #f63838;
+  text-align: center;
+  color: #ffffff;
+  font-size: 10px;
+  height: 20px;
+  padding: 5px;
+}
 @-webkit-keyframes myfade {
   from {opacity: .4}
   to {opacity: 1}
