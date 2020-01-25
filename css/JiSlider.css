@@ -110,7 +110,7 @@
     padding: 0 30px;
     left: -66%;
     right: 0;
-    bottom: 20%;
+    bottom: 10%;
     margin: auto;
     text-align: center;
 }
@@ -144,7 +144,6 @@
 		padding: 0 30px;
 		left: -73%;
 		right: 0;
-		bottom: 20%;
 	}
 }
 @media (max-width:1280px){
@@ -153,7 +152,6 @@
 		padding: 0 30px;
 		left: -82%;
 		right: 0;
-		bottom: 20%;
 	}
 }
 @media (max-width:1080px){
@@ -161,7 +159,6 @@
 		padding: 0 30px;
 		left: -79%;
 		right: 0;
-		bottom: 20%;
 	}
 }
 @media (max-width:1050px){
@@ -170,7 +167,6 @@
 		padding: 0 30px;
 		left: -79%;
 		right: 0;
-		bottom: 26%;
 	}
 }
 @media (max-width:1024px){
@@ -178,7 +174,6 @@
 		padding: 0 30px;
 		left: -77%;
 		right: 0;
-		bottom: 26%;
 	}
 }
 @media (max-width:991px){
@@ -187,7 +182,6 @@
 		padding: 0 30px;
 		left: -63%;
 		right: 0;
-		bottom: 23%;
 	}
 }
 @media (max-width:900px){
@@ -195,7 +189,6 @@
 		padding: 0 30px;
 		left: -71%;
 		right: 0;
-		bottom: 23%;
 	}
 }
 @media (max-width:800px){
@@ -203,7 +196,6 @@
 		padding: 0 30px;
 		left: -70%;
 		right: 0;
-		bottom: 23%;
 	}
 }
 @media (max-width:667px){
@@ -212,7 +204,6 @@
 		padding: 0 30px;
 		left: -66%;
 		right: 0;
-		bottom: 23%;
 	}
 	
 }
@@ -220,7 +211,6 @@
 	.jislider__controller {
 		left: -68%;
 		right: 0;
-		bottom: 23%;
 	}
 }
 @media (max-width:600px){
@@ -228,7 +218,6 @@
 		padding: 0 20px;
 		left: -63%;
 		right: 0;
-		bottom: 22%;
 	}
 }
 @media (max-width:568px){
@@ -236,7 +225,6 @@
 		padding: 0 20px;
 		left: -64%;
 		right: 0;
-		bottom: 15%;
 	}
 }
 @media (max-width:480px){
@@ -245,7 +233,6 @@
 		padding: 0 10px;
 		left: -57%;
 		right: 0;
-		bottom: 22%;
 	}
 	
 }
@@ -276,7 +263,6 @@
 		padding: 0 0px;
 		left: -49%;
 		right: 0;
-		bottom: 14%;
 	}
 }
 @media (max-width:375px){
@@ -284,7 +270,6 @@
 		padding: 0 0px;
 		left: -59%;
 		right: 0;
-		bottom: 14%;
 	}
 }
 @media (max-width:320px){
