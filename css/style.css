@@ -2109,11 +2109,18 @@ abel.anim span {
 	}
 }
 @media(max-width:768px){
-	.nav-colored {
-		font-size: 13px;
-	}
-	.nav-colored .navbar-header {
+	.navbar-top {
 		display: none;
+	}
+	.nav-colored .navbar-top {
+		padding: 0px;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		height: 100%;
+	}
+	.nav-colored .navbar-top .header-contact{
+		margin-top: 5px;
 	}
 	.navbar-nav {
 		text-align: center;
