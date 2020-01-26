@@ -72,6 +72,75 @@ const images = [
   ],
   ["1_aislante", "2_aislante", "3_aislante", "4_aislante"]
 ];
+const titulos = [
+  'CAJILLO CON ILUMINACION LED',
+  'PLAFONES DECORATIVOS',
+  'MUEBLES PARA TV',
+  'MUROS Y NICHOS',
+  'CABECERAS',
+  'TABLAROCA PARA EXTERIOR',
+  'ISLAS Y BARRAS',
+  'PLAFON CUADRICULADO',
+  'AISLANTE ACUSTICO Y TERMICO',
+]
+const descripciones = [
+  `consectetur adipiscing
+  elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Scelerisque varius morbi enim nunc faucibus a. Amet dictum
+  sit amet justo donec enim diam vulputate ut. Amet porttitor eget
+  dolor morbi. A cras semper auctor neque`,
+  `consectetur adipiscing
+  elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Scelerisque varius morbi enim nunc faucibus a. Amet dictum
+  sit amet justo donec enim diam vulputate ut. Amet porttitor eget
+  dolor morbi. A cras semper auctor neque`,
+  `consectetur adipiscing
+  elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Scelerisque varius morbi enim nunc faucibus a. Amet dictum
+  sit amet justo donec enim diam vulputate ut. Amet porttitor eget
+  dolor morbi. A cras semper auctor neque`,
+  `consectetur adipiscing
+  elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Scelerisque varius morbi enim nunc faucibus a. Amet dictum
+  sit amet justo donec enim diam vulputate ut. Amet porttitor eget
+  dolor morbi. A cras semper auctor neque`,
+  `consectetur adipiscing
+  elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Scelerisque varius morbi enim nunc faucibus a. Amet dictum
+  sit amet justo donec enim diam vulputate ut. Amet porttitor eget
+  dolor morbi. A cras semper auctor neque`,
+  `consectetur adipiscing
+  elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Scelerisque varius morbi enim nunc faucibus a. Amet dictum
+  sit amet justo donec enim diam vulputate ut. Amet porttitor eget
+  dolor morbi. A cras semper auctor neque`,
+  `consectetur adipiscing
+  elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Scelerisque varius morbi enim nunc faucibus a. Amet dictum
+  sit amet justo donec enim diam vulputate ut. Amet porttitor eget
+  dolor morbi. A cras semper auctor neque`,
+  `consectetur adipiscing
+  elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Scelerisque varius morbi enim nunc faucibus a. Amet dictum
+  sit amet justo donec enim diam vulputate ut. Amet porttitor eget
+  dolor morbi. A cras semper auctor neque`,
+  `consectetur adipiscing
+  elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Scelerisque varius morbi enim nunc faucibus a. Amet dictum
+  sit amet justo donec enim diam vulputate ut. Amet porttitor eget
+  dolor morbi. A cras semper auctor neque`,
+]
+const pdfURLS = [
+  'pdf1',
+  'pdf2',
+  'pdf3',
+  'pdf4',
+  'pdf5',
+  'pdf6',
+  'pdf7',
+  'pdf8',
+  'pdf9',
+]
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const indexPage = urlParams.get("d");
@@ -120,6 +189,14 @@ window.onload = async function() {
       type = "AISLANTE";
       break;
   }
+
+  // set title
+  const title = document.getElementById('section-title');
+  const description = document.getElementById('descripcion');
+  const linkpdf = document.getElementById('button-pdf');
+  title.append(titulos[indexPage-1]);
+  description.append(descripciones[indexPage-1]);
+  linkpdf.setAttribute('href', `../pdfs/${pdfURLS[indexPage-1]}`)
 
   for (let index = 0; index < images[indexPage - 1].length; index++) {
     const filename = images[indexPage - 1][index];

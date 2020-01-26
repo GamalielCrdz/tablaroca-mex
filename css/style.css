@@ -2715,6 +2715,7 @@ abel.anim span {
 
 .new-title {
   font-size: 1.5em !important;
+  text-decoration: underline;
 }
 .img-container-beneficios {
   width: 290px;
@@ -2745,6 +2746,7 @@ abel.anim span {
   font-size: 1.5em;
   font-weight: 700;
   text-transform: uppercase;
+  text-decoration: underline;
 }
 .estilos-images-container {
   display: flex;
@@ -2808,5 +2810,5 @@ abel.anim span {
   text-decoration: underline;
 }
 .text-vision {
-  font-size: 16px;
+  font-size: 14px;
 }
