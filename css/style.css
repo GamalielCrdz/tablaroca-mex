@@ -281,6 +281,7 @@ button {
 }
 .navbar-nav {
   float: right;
+  margin-top: 8px;
 }
 .navbar-default .navbar-brand,
 .navbar-default .navbar-brand:hover,
@@ -316,8 +317,8 @@ button {
   -ms-transition: 0.5s all;
 }
 .img-logo {
-  width: 120px;
-  margin: 5px 0px 0px 5px;
+  width: 150px;
+  margin: 20px 0px 0px 5px;
 }
 .header-bottom {
   padding: 0px;
@@ -333,7 +334,7 @@ button {
   color: white !important;
 }
 .navbar-top {
-  height: 25px;
+  height: 35px;
   background-color: #111111;
   color: #ffffff;
   font-size: 13px;
@@ -2264,6 +2265,10 @@ abel.anim span {
   }
   .header-bottom {
     min-height: 65px;
+  }
+  .img-logo {
+    width: 120px;
+    margin-top: 5px;
   }
   .banner-silder {
     margin-top: 65px;
